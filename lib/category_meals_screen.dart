@@ -15,10 +15,10 @@ class CategoryMealsScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(categoryTitle),
       ),
-      body: Center(
-        child: Text(
-          "Recipies for this category",
-        ),
+      body: ListView.builder(itemBuilder: (context,index){
+
+      }
+      itemCount: ,
       ),
     );
   }
