@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:meals_app/category_meals_screen.dart';
 
 class CategoryItem extends StatelessWidget {
+  final String id;
   final String title;
   final Color color;
 
   CategoryItem(
+    this.id,
     this.title,
     this.color,
   );
@@ -13,12 +15,12 @@ class CategoryItem extends StatelessWidget {
   //allows navigation to a new page. Material page route is important, you feed the builder the widget
   //you want to move to here
   void selectCategory(BuildContext context) {
-    Navigator.of(context).push(
-      MaterialPageRoute(
-        builder: (context) {
-          return CategoryMealsScreen();
-        },
-      ),
+    Navigator.of(context).pushNamed(
+      '/categories',
+      arguments: {
+        'id': id,
+        'title': title,
+      },
     );
   }
 
