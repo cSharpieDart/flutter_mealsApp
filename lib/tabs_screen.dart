@@ -17,7 +17,6 @@ class _TabsScreenState extends State<TabsScreen> {
       'page': FavouritesScreen(),
       'title': 'Your Favourites',
     }
-    
   ];
 
   int _selectedPageIndex = 0;
@@ -33,6 +32,9 @@ class _TabsScreenState extends State<TabsScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(_pages[_selectedPageIndex]['title']),
+      ),
+      drawer: Drawer(
+        child: Text("Drawer"),
       ),
       body: _pages[_selectedPageIndex]['page'],
       bottomNavigationBar: BottomNavigationBar(
